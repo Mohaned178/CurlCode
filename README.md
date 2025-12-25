@@ -25,22 +25,43 @@ This project follows **Clean Architecture** principles with the following layers
 
 ```
 CurlCode/
-├── CurlCode.Domain/              # Domain entities and enums
-│   ├── Common/
+├── CurlCode.Domain/                    # Domain Layer
+│   ├── Common/                         # Base entities
 │   ├── Entities/
-│   └── Enums/
-├── CurlCode.Application/         # Business logic
+│   │   ├── Community/                  # Solutions, comments, likes
+│   │   ├── Identity/                   # Users, profiles
+│   │   ├── Problems/                   # Problems, topics, test cases
+│   │   ├── StudyPlans/                 # Study plans and progress
+│   │   └── Submissions/                # Code submissions
+│   └── Enums/                          # Domain enumerations
+│
+├── CurlCode.Application/               # Application Layer
+│   ├── Common/
+│   │   ├── Constants/                  # Cache keys, constants
+│   │   ├── Exceptions/                 # Custom exceptions
+│   │   ├── Mappings/                   # AutoMapper profiles
+│   │   └── Models/                     # Shared models
 │   ├── Contracts/
-│   ├── DTOs/
-│   ├── Services/
-│   └── Common/
-├── CurlCode.Infrastructure/       # Data access and external services
+│   │   ├── Infrastructure/             # Service interfaces
+│   │   └── Persistence/                # Repository interfaces
+│   ├── DTOs/                           # Data Transfer Objects
+│   ├── Services/                       # Business logic implementations
+│   └── Validators/                     # FluentValidation validators
+│
+├── CurlCode.Infrastructure/            # Infrastructure Layer
+│   ├── Identity/                       # Identity configuration & seeding
 │   ├── Persistence/
-│   ├── Services/
-│   └── Identity/
-└── CurlCode.API/                  # API controllers
-    ├── Controllers/
-    └── Middlewares/
+│   │   ├── Configurations/            # EF Core entity configurations
+│   │   ├── Contexts/                  # DbContext
+│   │   └── Repositories/              # Repository implementations
+│   └── Services/                      # External service implementations
+│
+├── CurlCode.API/                       # API Layer
+│   ├── Controllers/                   # API endpoints
+│   └── Middlewares/                   # Custom middleware
+│
+└── CurlCode.Tests/                    # Test Layer
+    └── Services/                      # Unit tests for services
 ```
 
 ## 🔐 API Endpoints
