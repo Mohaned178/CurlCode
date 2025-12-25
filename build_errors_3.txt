@@ -1,0 +1,53 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  CurlCode.Domain -> F:\CurlCode Project\CurlCode.Domain\bin\Debug\net10.0\CurlCode.Domain.dll
+  CurlCode.Application -> F:\CurlCode Project\CurlCode.Application\bin\Debug\net10.0\CurlCode.Application.dll
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,13): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,19): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,25): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,31): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\SubmissionServiceTests.cs(28,92): error CS1503: Argument 1: cannot convert from 'System.Threading.Tasks.Task' to 'System.Threading.Tasks.Task<CurlCode.Domain.Entities.Submissions.Submission>' [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+
+Build FAILED.
+
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(26,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,13): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,19): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,25): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(31,31): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\SubmissionServiceTests.cs(28,92): error CS1503: Argument 1: cannot convert from 'System.Threading.Tasks.Task' to 'System.Threading.Tasks.Task<CurlCode.Domain.Entities.Submissions.Submission>' [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+    20 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:01.33

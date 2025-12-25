@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  CurlCode.Domain -> F:\CurlCode Project\CurlCode.Domain\bin\Debug\net10.0\CurlCode.Domain.dll
+  CurlCode.Application -> F:\CurlCode Project\CurlCode.Application\bin\Debug\net10.0\CurlCode.Application.dll
+  CurlCode.Tests -> F:\CurlCode Project\CurlCode.Tests\bin\Debug\net10.0\CurlCode.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.29

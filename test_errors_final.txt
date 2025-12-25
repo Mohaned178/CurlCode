@@ -1,0 +1,198 @@
+Build started 12/25/2025 7:28:18 PM.
+     1>Project "F:\CurlCode Project\CurlCode.sln" on node 1 (VSTest target(s)).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Debug|Any CPU".
+Test run for F:\CurlCode Project\CurlCode.Tests\bin\Debug\net10.0\CurlCode.Tests.dll (.NETCoreApp,Version=v10.0)
+VSTest version 18.0.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.1)
+[xUnit.net 00:00:00.07]   Discovering: CurlCode.Tests
+[xUnit.net 00:00:00.11]   Discovered:  CurlCode.Tests
+[xUnit.net 00:00:00.13]   Starting:    CurlCode.Tests
+     Warning:
+     The component "Fluent Assertions" is governed by the rules defined in the Xceed License Agreement and
+     the Xceed Fluent Assertions Community License. You may use Fluent Assertions free of charge for
+     non-commercial use only. An active subscription is required to use Fluent Assertions for commercial use.
+     Please contact Xceed Sales mailto:sales@xceed.com to acquire a subscription at a very low cost.
+     A paid commercial license supports the development and continued increasing support of
+     Fluent Assertions users under both commercial and community licenses. Help us
+     keep Fluent Assertions at the forefront of unit testing.
+     For more information, visit https://xceed.com/products/unit-testing/fluent-assertions/
+  Passed CurlCode.Tests.Services.StudyPlanServiceTests.CreateCustomStudyPlanAsync_ShouldCreatePlan_WhenItemsAreValid [130 ms]
+  Passed CurlCode.Tests.Services.ProfileServiceTests.GetProfileByUsernameAsync_ShouldReturnNull_WhenUserNotFound [131 ms]
+  Passed CurlCode.Tests.Services.TopicServiceTests.CreateTopicAsync_ShouldSucceed_WhenNameIsUnique [144 ms]
+  Passed CurlCode.Tests.Services.ProblemServiceTests.GetProblemByIdAsync_ShouldResultFromDbAndSetCache_WhenCacheDoesNotExist [151 ms]
+  Passed CurlCode.Tests.Services.TopicServiceTests.CreateTopicAsync_ShouldThrowValidationException_WhenNameExists [11 ms]
+  Passed CurlCode.Tests.Services.SolutionServiceTests.UpdateSolutionAsync_ShouldThrowValidationException_WhenUserIsNotOwner [156 ms]
+[xUnit.net 00:00:00.35]       System.ArgumentException : Can not instantiate proxy of class: Microsoft.AspNetCore.Identity.SignInManager`1[[CurlCode.Domain.Entities.Identity.ApplicationUser, CurlCode.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+[xUnit.net 00:00:00.35]       Could not find a constructor that would match given arguments:
+[xUnit.net 00:00:00.35]       Castle.Proxies.UserManager`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IHttpContextAccessorProxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IUserClaimsPrincipalFactory`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IOptions`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.ILogger`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IAuthenticationSchemeProviderProxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IUserConfirmation`1Proxy
+[xUnit.net 00:00:00.35]        (Parameter 'constructorArguments')
+[xUnit.net 00:00:00.35]       ---- System.MissingMethodException : Constructor on type 'Castle.Proxies.SignInManager`1Proxy' not found.
+[xUnit.net 00:00:00.35]       Stack Trace:
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+[xUnit.net 00:00:00.35]         /_/src/Moq/Interception/CastleProxyFactory.cs(62,0): at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments)
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(309,0): at Moq.Mock`1.InitializeInstance()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(323,0): at Moq.Mock`1.OnGetObject()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock.cs(181,0): at Moq.Mock.get_Object()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(281,0): at Moq.Mock`1.get_Object()
+[xUnit.net 00:00:00.35]         F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(41,0): at CurlCode.Tests.Services.AuthServiceTests..ctor()
+[xUnit.net 00:00:00.35]            at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+[xUnit.net 00:00:00.35]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:00.35]            at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+[xUnit.net 00:00:00.35]       System.ArgumentException : Can not instantiate proxy of class: Microsoft.AspNetCore.Identity.SignInManager`1[[CurlCode.Domain.Entities.Identity.ApplicationUser, CurlCode.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+[xUnit.net 00:00:00.35]       Could not find a constructor that would match given arguments:
+[xUnit.net 00:00:00.35]       Castle.Proxies.UserManager`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IHttpContextAccessorProxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IUserClaimsPrincipalFactory`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IOptions`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.ILogger`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IAuthenticationSchemeProviderProxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IUserConfirmation`1Proxy
+[xUnit.net 00:00:00.35]        (Parameter 'constructorArguments')
+[xUnit.net 00:00:00.35]       ---- System.MissingMethodException : Constructor on type 'Castle.Proxies.SignInManager`1Proxy' not found.
+[xUnit.net 00:00:00.35]       Stack Trace:
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+[xUnit.net 00:00:00.35]         /_/src/Moq/Interception/CastleProxyFactory.cs(62,0): at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments)
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(309,0): at Moq.Mock`1.InitializeInstance()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(323,0): at Moq.Mock`1.OnGetObject()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock.cs(181,0): at Moq.Mock.get_Object()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(281,0): at Moq.Mock`1.get_Object()
+[xUnit.net 00:00:00.35]         F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(41,0): at CurlCode.Tests.Services.AuthServiceTests..ctor()
+[xUnit.net 00:00:00.35]            at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+[xUnit.net 00:00:00.35]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:00.35]            at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+[xUnit.net 00:00:00.35]       System.ArgumentException : Can not instantiate proxy of class: Microsoft.AspNetCore.Identity.SignInManager`1[[CurlCode.Domain.Entities.Identity.ApplicationUser, CurlCode.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+[xUnit.net 00:00:00.35]       Could not find a constructor that would match given arguments:
+[xUnit.net 00:00:00.35]       Castle.Proxies.UserManager`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IHttpContextAccessorProxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IUserClaimsPrincipalFactory`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IOptions`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.ILogger`1Proxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IAuthenticationSchemeProviderProxy
+[xUnit.net 00:00:00.35]       Castle.Proxies.IUserConfirmation`1Proxy
+[xUnit.net 00:00:00.35]        (Parameter 'constructorArguments')
+[xUnit.net 00:00:00.35]       ---- System.MissingMethodException : Constructor on type 'Castle.Proxies.SignInManager`1Proxy' not found.
+[xUnit.net 00:00:00.35]       Stack Trace:
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+[xUnit.net 00:00:00.35]         /_/src/Moq/Interception/CastleProxyFactory.cs(62,0): at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments)
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(309,0): at Moq.Mock`1.InitializeInstance()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(323,0): at Moq.Mock`1.OnGetObject()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock.cs(181,0): at Moq.Mock.get_Object()
+[xUnit.net 00:00:00.35]         /_/src/Moq/Mock`1.cs(281,0): at Moq.Mock`1.get_Object()
+[xUnit.net 00:00:00.35]         F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(41,0): at CurlCode.Tests.Services.AuthServiceTests..ctor()
+[xUnit.net 00:00:00.35]            at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+[xUnit.net 00:00:00.35]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:00.35]            at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+[xUnit.net 00:00:00.35]            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+[xUnit.net 00:00:00.39]   Finished:    CurlCode.Tests
+  Passed CurlCode.Tests.Services.SolutionServiceTests.CreateSolutionAsync_ShouldThrowNotFound_WhenProblemDoesNotExist [4 ms]
+  Passed CurlCode.Tests.Services.ProblemServiceTests.GetProblemByIdAsync_ShouldReturnFromCache_WhenCacheExists [19 ms]
+  Failed CurlCode.Tests.Services.AuthServiceTests.RegisterAsync_ShouldThrowValidationException_WhenUserNameExists [1 ms]
+  Error Message:
+   System.ArgumentException : Can not instantiate proxy of class: Microsoft.AspNetCore.Identity.SignInManager`1[[CurlCode.Domain.Entities.Identity.ApplicationUser, CurlCode.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+Could not find a constructor that would match given arguments:
+Castle.Proxies.UserManager`1Proxy
+Castle.Proxies.IHttpContextAccessorProxy
+Castle.Proxies.IUserClaimsPrincipalFactory`1Proxy
+Castle.Proxies.IOptions`1Proxy
+Castle.Proxies.ILogger`1Proxy
+Castle.Proxies.IAuthenticationSchemeProviderProxy
+Castle.Proxies.IUserConfirmation`1Proxy
+ (Parameter 'constructorArguments')
+---- System.MissingMethodException : Constructor on type 'Castle.Proxies.SignInManager`1Proxy' not found.
+  Stack Trace:
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 62
+   at Moq.Mock`1.InitializeInstance() in /_/src/Moq/Mock`1.cs:line 309
+   at Moq.Mock`1.OnGetObject() in /_/src/Moq/Mock`1.cs:line 323
+   at Moq.Mock.get_Object() in /_/src/Moq/Mock.cs:line 181
+   at Moq.Mock`1.get_Object() in /_/src/Moq/Mock`1.cs:line 281
+   at CurlCode.Tests.Services.AuthServiceTests..ctor() in F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs:line 41
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+  Failed CurlCode.Tests.Services.AuthServiceTests.LoginAsync_ShouldReturnAuthResponse_WhenCredentialsAreValid [1 ms]
+  Error Message:
+   System.ArgumentException : Can not instantiate proxy of class: Microsoft.AspNetCore.Identity.SignInManager`1[[CurlCode.Domain.Entities.Identity.ApplicationUser, CurlCode.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+Could not find a constructor that would match given arguments:
+Castle.Proxies.UserManager`1Proxy
+Castle.Proxies.IHttpContextAccessorProxy
+Castle.Proxies.IUserClaimsPrincipalFactory`1Proxy
+Castle.Proxies.IOptions`1Proxy
+Castle.Proxies.ILogger`1Proxy
+Castle.Proxies.IAuthenticationSchemeProviderProxy
+Castle.Proxies.IUserConfirmation`1Proxy
+ (Parameter 'constructorArguments')
+---- System.MissingMethodException : Constructor on type 'Castle.Proxies.SignInManager`1Proxy' not found.
+  Stack Trace:
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 62
+   at Moq.Mock`1.InitializeInstance() in /_/src/Moq/Mock`1.cs:line 309
+   at Moq.Mock`1.OnGetObject() in /_/src/Moq/Mock`1.cs:line 323
+   at Moq.Mock.get_Object() in /_/src/Moq/Mock.cs:line 181
+   at Moq.Mock`1.get_Object() in /_/src/Moq/Mock`1.cs:line 281
+   at CurlCode.Tests.Services.AuthServiceTests..ctor() in F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs:line 41
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+  Failed CurlCode.Tests.Services.AuthServiceTests.RegisterAsync_ShouldThrowValidationException_WhenEmailExists [1 ms]
+  Error Message:
+   System.ArgumentException : Can not instantiate proxy of class: Microsoft.AspNetCore.Identity.SignInManager`1[[CurlCode.Domain.Entities.Identity.ApplicationUser, CurlCode.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+Could not find a constructor that would match given arguments:
+Castle.Proxies.UserManager`1Proxy
+Castle.Proxies.IHttpContextAccessorProxy
+Castle.Proxies.IUserClaimsPrincipalFactory`1Proxy
+Castle.Proxies.IOptions`1Proxy
+Castle.Proxies.ILogger`1Proxy
+Castle.Proxies.IAuthenticationSchemeProviderProxy
+Castle.Proxies.IUserConfirmation`1Proxy
+ (Parameter 'constructorArguments')
+---- System.MissingMethodException : Constructor on type 'Castle.Proxies.SignInManager`1Proxy' not found.
+  Stack Trace:
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 62
+   at Moq.Mock`1.InitializeInstance() in /_/src/Moq/Mock`1.cs:line 309
+   at Moq.Mock`1.OnGetObject() in /_/src/Moq/Mock`1.cs:line 323
+   at Moq.Mock.get_Object() in /_/src/Moq/Mock.cs:line 181
+   at Moq.Mock`1.get_Object() in /_/src/Moq/Mock`1.cs:line 281
+   at CurlCode.Tests.Services.AuthServiceTests..ctor() in F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs:line 41
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+  Passed CurlCode.Tests.Services.SubmissionServiceTests.SubmitCodeAsync_ShouldProcessSubmission_WhenProblemExists [232 ms]
+
+Total tests: 12
+     Passed: 9
+     Failed: 3
+ Total time: 0.8270 Seconds
+     1>Project "F:\CurlCode Project\CurlCode.sln" (1) is building "F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj" (5) on node 3 (VSTest target(s)).
+     5>_VSTestConsole:
+         MSB4181: The "VSTestTask" task returned false but did not log an error.
+     5>Done Building Project "F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj" (VSTest target(s)) -- FAILED.
+     1>Done Building Project "F:\CurlCode Project\CurlCode.sln" (VSTest target(s)) -- FAILED.
+
+Build FAILED.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.89

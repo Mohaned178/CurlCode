@@ -1,0 +1,57 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  CurlCode.Domain -> F:\CurlCode Project\CurlCode.Domain\bin\Debug\net10.0\CurlCode.Domain.dll
+  CurlCode.Application -> F:\CurlCode Project\CurlCode.Application\bin\Debug\net10.0\CurlCode.Application.dll
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(32,28): error CS7036: There is no argument given that corresponds to the required parameter 'unitOfWork' of 'AuthService.AuthService(UserManager<ApplicationUser>, SignInManager<ApplicationUser>, IJwtTokenGenerator, IUnitOfWork, IMapper, IEmailSender)' [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(22,12): warning CS8618: Non-nullable field '_mockSignInManager' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\SubmissionServiceTests.cs(31,98): error CS0103: The name 'Language' does not exist in the current context [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\SubmissionServiceTests.cs(39,65): error CS0029: Cannot implicitly convert type 'string' to 'CurlCode.Domain.Enums.SubmissionStatus' [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(84,45): error CS1501: No overload for method 'GenerateToken' takes 2 arguments [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(95,16): error CS1061: 'AuthResponse' does not contain a definition for 'Id' and no accessible extension method 'Id' accepting a first argument of type 'AuthResponse' could be found (are you missing a using directive or an assembly reference?) [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(17,59): warning CS0169: The field 'AuthServiceTests._mockSignInManager' is never used [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+
+Build FAILED.
+
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(25,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(22,12): warning CS8618: Non-nullable field '_mockSignInManager' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,81): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,87): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,93): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,99): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,105): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,111): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,117): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\ProfileServiceTests.cs(24,123): warning CS8625: Cannot convert null literal to non-nullable reference type. [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(17,59): warning CS0169: The field 'AuthServiceTests._mockSignInManager' is never used [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(32,28): error CS7036: There is no argument given that corresponds to the required parameter 'unitOfWork' of 'AuthService.AuthService(UserManager<ApplicationUser>, SignInManager<ApplicationUser>, IJwtTokenGenerator, IUnitOfWork, IMapper, IEmailSender)' [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\SubmissionServiceTests.cs(31,98): error CS0103: The name 'Language' does not exist in the current context [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\SubmissionServiceTests.cs(39,65): error CS0029: Cannot implicitly convert type 'string' to 'CurlCode.Domain.Enums.SubmissionStatus' [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(84,45): error CS1501: No overload for method 'GenerateToken' takes 2 arguments [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+F:\CurlCode Project\CurlCode.Tests\Services\AuthServiceTests.cs(95,16): error CS1061: 'AuthResponse' does not contain a definition for 'Id' and no accessible extension method 'Id' accepting a first argument of type 'AuthResponse' could be found (are you missing a using directive or an assembly reference?) [F:\CurlCode Project\CurlCode.Tests\CurlCode.Tests.csproj]
+    18 Warning(s)
+    5 Error(s)
+
+Time Elapsed 00:00:01.25

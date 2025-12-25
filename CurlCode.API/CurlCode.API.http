@@ -1,0 +1,6 @@
+@CurlCode.API_HostAddress = http://localhost:5166
+
+GET {{CurlCode.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
