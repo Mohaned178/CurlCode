@@ -48,6 +48,10 @@ CurlCode/
 ### Authentication
 - `POST /api/auth/register` - Register a new user
 - `POST /api/auth/login` - Login and receive JWT token
+- `POST /refresh-token` - Refresh access token
+- `POST /forgot-password` - Request password reset
+- `POST /reset-password` - Reset password with token
+- `POST /logout - Logout` (invalidate token)
 
 ### Profiles
 - `GET /api/profiles/me` - Get current user's profile (Auth required)
