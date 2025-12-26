@@ -31,7 +31,7 @@ public class ProblemRepository : GenericRepository<Problem>, IProblemRepository
                 .ThenInclude(pt => pt.Topic)
             .AsQueryable();
 
-        // Apply filters
+
         if (!string.IsNullOrWhiteSpace(filterParams.SearchTerm))
         {
             query = query.Where(p => p.Title.Contains(filterParams.SearchTerm) ||
@@ -48,7 +48,7 @@ public class ProblemRepository : GenericRepository<Problem>, IProblemRepository
             query = query.Where(p => p.ProblemTopics.Any(pt => pt.TopicId == filterParams.TopicId.Value));
         }
 
-        // Apply sorting
+
         query = filterParams.SortBy?.ToLower() switch
         {
             "title" => filterParams.SortOrder == "asc" 
@@ -108,13 +108,13 @@ public class ProblemRepository : GenericRepository<Problem>, IProblemRepository
         
         if (existingLike != null)
         {
-            // Remove like
+
             problem.Likes.Remove(existingLike);
             problem.LikesCount = Math.Max(0, problem.LikesCount - 1);
         }
         else if (existingDislike != null)
         {
-            // Switch from dislike to like
+
             problem.Dislikes.Remove(existingDislike);
             problem.DislikesCount = Math.Max(0, problem.DislikesCount - 1);
             problem.Likes.Add(new ProblemLike { ProblemId = problemId, UserId = userId });
@@ -122,7 +122,7 @@ public class ProblemRepository : GenericRepository<Problem>, IProblemRepository
         }
         else
         {
-            // Add like
+
             problem.Likes.Add(new ProblemLike { ProblemId = problemId, UserId = userId });
             problem.LikesCount++;
         }
@@ -148,13 +148,13 @@ public class ProblemRepository : GenericRepository<Problem>, IProblemRepository
         
         if (existingDislike != null)
         {
-            // Remove dislike
+
             problem.Dislikes.Remove(existingDislike);
             problem.DislikesCount = Math.Max(0, problem.DislikesCount - 1);
         }
         else if (existingLike != null)
         {
-            // Switch from like to dislike
+
             problem.Likes.Remove(existingLike);
             problem.LikesCount = Math.Max(0, problem.LikesCount - 1);
             problem.Dislikes.Add(new ProblemDislike { ProblemId = problemId, UserId = userId });
@@ -162,7 +162,7 @@ public class ProblemRepository : GenericRepository<Problem>, IProblemRepository
         }
         else
         {
-            // Add dislike
+
             problem.Dislikes.Add(new ProblemDislike { ProblemId = problemId, UserId = userId });
             problem.DislikesCount++;
         }

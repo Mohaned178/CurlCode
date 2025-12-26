@@ -19,9 +19,6 @@ public class ContestsController : ControllerBase
         _currentUserService = currentUserService;
     }
 
-    /// <summary>
-    /// Get a specific contest by ID with full details
-    /// </summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<ContestDetailDto>> GetById(int id)
     {
@@ -30,9 +27,6 @@ public class ContestsController : ControllerBase
         return Ok(contest);
     }
 
-    /// <summary>
-    /// Get all upcoming contests
-    /// </summary>
     [HttpGet("upcoming")]
     public async Task<ActionResult<IEnumerable<ContestDto>>> GetUpcoming()
     {
@@ -40,9 +34,6 @@ public class ContestsController : ControllerBase
         return Ok(contests);
     }
 
-    /// <summary>
-    /// Get all currently running contests
-    /// </summary>
     [HttpGet("running")]
     public async Task<ActionResult<IEnumerable<ContestDto>>> GetRunning()
     {
@@ -50,9 +41,6 @@ public class ContestsController : ControllerBase
         return Ok(contests);
     }
 
-    /// <summary>
-    /// Get past contests
-    /// </summary>
     [HttpGet("past")]
     public async Task<ActionResult<IEnumerable<ContestDto>>> GetPast([FromQuery] int count = 10)
     {
@@ -60,9 +48,6 @@ public class ContestsController : ControllerBase
         return Ok(contests);
     }
 
-    /// <summary>
-    /// Create a new contest (Admin only)
-    /// </summary>
     [HttpPost]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult<ContestDto>> Create([FromBody] CreateContestRequest request)
@@ -71,9 +56,6 @@ public class ContestsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = contest.Id }, contest);
     }
 
-    /// <summary>
-    /// Update an existing contest (Admin only)
-    /// </summary>
     [HttpPut("{id}")]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult<ContestDto>> Update(int id, [FromBody] UpdateContestRequest request)
@@ -83,9 +65,6 @@ public class ContestsController : ControllerBase
         return Ok(contest);
     }
 
-    /// <summary>
-    /// Delete a contest (Admin only)
-    /// </summary>
     [HttpDelete("{id}")]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
@@ -95,9 +74,6 @@ public class ContestsController : ControllerBase
         return NoContent();
     }
 
-    /// <summary>
-    /// Join a contest
-    /// </summary>
     [HttpPost("{id}/join")]
     [Authorize]
     public async Task<IActionResult> Join(int id)
@@ -110,9 +86,6 @@ public class ContestsController : ControllerBase
         return Ok("Successfully joined the contest.");
     }
 
-    /// <summary>
-    /// Get contest standings/leaderboard
-    /// </summary>
     [HttpGet("{id}/standings")]
     public async Task<ActionResult<IEnumerable<ContestStandingDto>>> GetStandings(int id)
     {

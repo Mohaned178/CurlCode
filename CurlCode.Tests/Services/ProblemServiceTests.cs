@@ -29,7 +29,6 @@ public class ProblemServiceTests
     [Fact]
     public async Task GetProblemByIdAsync_ShouldReturnFromCache_WhenCacheExists()
     {
-        // Arrange
         var problemId = 1;
         var cachedDto = new ProblemDetailDto { Id = problemId, Title = "Cached Problem" };
         var cacheKey = CacheKeys.GetProblemDetailKey(problemId);
@@ -37,10 +36,8 @@ public class ProblemServiceTests
         _mockCacheService.Setup(x => x.GetAsync<ProblemDetailDto>(cacheKey))
             .ReturnsAsync(cachedDto);
 
-        // Act
         var result = await _problemService.GetProblemByIdAsync(problemId);
 
-        // Assert
         result.Should().NotBeNull();
         result.Should().BeEquivalentTo(cachedDto);
         _mockUnitOfWork.Verify(x => x.Problems.GetByIdWithDetailsAsync(It.IsAny<int>()), Times.Never);
@@ -49,7 +46,6 @@ public class ProblemServiceTests
     [Fact]
     public async Task GetProblemByIdAsync_ShouldResultFromDbAndSetCache_WhenCacheDoesNotExist()
     {
-        // Arrange
         var problemId = 1;
         var problemEntity = new Problem { Id = problemId, Title = "Db Problem" };
         var problemDto = new ProblemDetailDto { Id = problemId, Title = "Db Problem" };
@@ -64,10 +60,8 @@ public class ProblemServiceTests
         _mockMapper.Setup(x => x.Map<ProblemDetailDto>(problemEntity))
             .Returns(problemDto);
 
-        // Act
         var result = await _problemService.GetProblemByIdAsync(problemId);
 
-        // Assert
         result.Should().NotBeNull();
         result.Title.Should().Be("Db Problem");
         _mockUnitOfWork.Verify(x => x.Problems.GetByIdWithDetailsAsync(problemId), Times.Once);

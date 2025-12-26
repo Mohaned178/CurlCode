@@ -26,7 +26,6 @@ public class StudyPlanServiceTests
     [Fact]
     public async Task CreateCustomStudyPlanAsync_ShouldCreatePlan_WhenItemsAreValid()
     {
-        // Arrange
         var dto = new CreateStudyPlanDto 
         { 
             Title = "My Plan", 
@@ -47,10 +46,8 @@ public class StudyPlanServiceTests
         _mockMapper.Setup(x => x.Map<StudyPlanDto>(createdPlan))
             .Returns(new StudyPlanDto { Id = 1, Title = "My Plan" });
 
-        // Act
         var result = await _studyPlanService.CreateCustomStudyPlanAsync(dto, "user1");
 
-        // Assert
         result.Should().NotBeNull();
         result.Title.Should().Be("My Plan");
     }

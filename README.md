@@ -85,11 +85,3 @@ The project follows the **Clean Architecture** pattern to maintain high decoupli
 
 ---
 
-## 📝 Roadmap
-
-- [x] Phase 1: Stabilization & Build Fixes
-- [x] Phase 2: Redis Distributed Caching Implementation
-- [x] Phase 3: Contest Module (Standings, Registration)
-- [x] Phase 4: Structured Logging with Seq & API Refactoring
-- [ ] Phase 5: SignalR Real-time Submission Notifications
-- [ ] Phase 6: Code Execution Engine Integration (Judge Service)

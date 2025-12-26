@@ -27,22 +27,18 @@ public class SolutionServiceTests
     [Fact]
     public async Task CreateSolutionAsync_ShouldThrowNotFound_WhenProblemDoesNotExist()
     {
-        // Arrange
         var dto = new CreateSolutionDto { ProblemId = 999, Title = "Test", Content = "Test", Code = "code" };
         _mockUnitOfWork.Setup(x => x.Problems.GetByIdAsync(dto.ProblemId))
             .ReturnsAsync((Problem?)null);
 
-        // Act
         Func<Task> act = async () => await _solutionService.CreateSolutionAsync(dto, "user1");
 
-        // Assert
         await act.Should().ThrowAsync<CurlCode.Application.Common.Exceptions.NotFoundException>();
     }
 
     [Fact]
     public async Task UpdateSolutionAsync_ShouldThrowValidationException_WhenUserIsNotOwner()
     {
-        // Arrange
         var solutionId = 1;
         var dto = new CreateSolutionDto { Title = "Update" };
         var solution = new Solution { Id = solutionId, UserId = "user1" };
@@ -50,11 +46,8 @@ public class SolutionServiceTests
         _mockUnitOfWork.Setup(x => x.Solutions.GetByIdAsync(solutionId))
             .ReturnsAsync(solution);
 
-        // Act
         Func<Task> act = async () => await _solutionService.UpdateSolutionAsync(solutionId, dto, "user2");
 
-        // Assert
-        // Assuming your service throws ValidationException for ownership check
         await act.Should().ThrowAsync<CurlCode.Application.Common.Exceptions.ValidationException>()
             .WithMessage("You can only update your own solutions.");
     }

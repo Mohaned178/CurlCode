@@ -1,14 +1,13 @@
 using CurlCode.API.Extensions;
 using CurlCode.API.Middlewares;
 using CurlCode.Infrastructure.Persistence.Contexts;
-using CurlCode.Infrastructure.Identity; // For DataSeeder
+using CurlCode.Infrastructure.Identity;
 using Serilog;
 using System.Text.Json.Serialization;
-using Microsoft.EntityFrameworkCore; // For MigrateAsync
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Serilog Configuration
 builder.Host.UseSerilog((context, services, configuration) =>
 {
     configuration
@@ -17,7 +16,6 @@ builder.Host.UseSerilog((context, services, configuration) =>
         .Enrich.FromLogContext();
 });
 
-// Add services to the container
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -28,11 +26,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 
-// Extension Methods for Service Registration
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
-// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -45,7 +41,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -61,11 +56,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Ensure database is created/migrated
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    // context.Database.EnsureCreated(); // Replaced by Migrations
     if (context.Database.GetPendingMigrations().Any())
     {
         await context.Database.MigrateAsync();

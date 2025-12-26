@@ -22,7 +22,6 @@ public class SubmissionServiceTests
         _mockUnitOfWork = new Mock<IUnitOfWork>();
         _mockMapper = new Mock<IMapper>();
         
-        // Mock Repositories
         var mockSubmissionRepo = new Mock<ISubmissionRepository>();
         mockSubmissionRepo.Setup(x => x.AddAsync(It.IsAny<Submission>()))
             .Returns<Submission>(s => Task.FromResult(s));
@@ -38,7 +37,6 @@ public class SubmissionServiceTests
     [Fact]
     public async Task SubmitCodeAsync_ShouldProcessSubmission_WhenProblemExists()
     {
-        // Arrange
         var request = new SubmitCodeRequest { ProblemId = 1, Code = "print('hello')", Language = ProgrammingLanguage.Python };
         var problem = new Problem { Id = 1, Title = "Pro", TestCases = new List<TestCase>() };
         
@@ -49,13 +47,10 @@ public class SubmissionServiceTests
         _mockMapper.Setup(x => x.Map<SubmissionResultDto>(It.IsAny<Submission>()))
             .Returns(new SubmissionResultDto { Id = 1, Status = SubmissionStatus.Accepted });
 
-        // Act
         var result = await _submissionService.SubmitCodeAsync(request, "user1");
 
-        // Assert
         result.Should().NotBeNull();
         _mockUnitOfWork.Verify(x => x.Submissions.AddAsync(It.IsAny<Submission>()), Times.Once);
-        // The service logic simulates processing and updates status
         _mockUnitOfWork.Verify(x => x.Submissions.UpdateAsync(It.IsAny<Submission>()), Times.Once);
     }
 }

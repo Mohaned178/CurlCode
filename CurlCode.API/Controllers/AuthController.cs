@@ -53,7 +53,7 @@ public class AuthController : ControllerBase
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
     {
-        // For JWT-based systems, logout is client-side; sign-out ensures cookies are cleared if used.
+        
         var userId = User?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
         if (string.IsNullOrEmpty(userId)) return Unauthorized();
         await _authService.LogoutAsync(userId);

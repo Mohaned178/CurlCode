@@ -34,7 +34,7 @@ public class AuthService : IAuthService
 
     public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
     {
-        // Specific domain restrictions removed to allow all users
+
         if (request.Email.Any(ch => char.IsUpper(ch)))
         {
             throw new Common.Exceptions.ValidationException("Email must be all lowercase.");
@@ -64,12 +64,11 @@ public class AuthService : IAuthService
             throw new Common.Exceptions.ValidationException(string.Join(", ", result.Errors.Select(e => e.Description)));
         }
 
-        // Create user profile - FirstName and LastName will be updated when user completes profile
         var profile = new UserProfile
         {
             UserId = user.Id,
-            FirstName = string.Empty, // Will be updated when user completes profile
-            LastName = string.Empty // Will be updated when user completes profile
+            FirstName = string.Empty,
+            LastName = string.Empty
         };
         await _unitOfWork.Profiles.AddAsync(profile);
         await _unitOfWork.SaveChangesAsync();
@@ -90,12 +89,11 @@ public class AuthService : IAuthService
 
     public async Task<AuthResponse> LoginAsync(LoginRequest request)
     {
-        // Try finding by email first
+
         var user = await _userManager.FindByEmailAsync(request.EmailOrUserName);
         if (user == null)
         {
-            // Fallback to username
-            user = await _userManager.FindByNameAsync(request.EmailOrUserName);
+        user = await _userManager.FindByNameAsync(request.EmailOrUserName);
         }
         if (user == null)
         {
@@ -157,7 +155,7 @@ public class AuthService : IAuthService
         var user = await _userManager.FindByEmailAsync(request.Email);
         if (user == null)
         {
-            // Do not reveal user existence
+
             return new ForgotPasswordResponse { EmailSent = true };
         }
 

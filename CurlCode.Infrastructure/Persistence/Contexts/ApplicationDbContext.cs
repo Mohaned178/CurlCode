@@ -34,7 +34,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<StudyPlanProgress> StudyPlanProgresses { get; set; }
     public DbSet<StudyPlanItemProgress> StudyPlanItemProgresses { get; set; }
     
-    // Contest entities
     public DbSet<Contest> Contests { get; set; }
     public DbSet<ContestProblem> ContestProblems { get; set; }
     public DbSet<ContestParticipant> ContestParticipants { get; set; }
@@ -43,7 +42,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         base.OnModelCreating(builder);
 
-        // Apply all configurations from assembly
         builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
     }
 }

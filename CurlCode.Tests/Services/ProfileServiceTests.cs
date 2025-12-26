@@ -30,14 +30,11 @@ public class ProfileServiceTests
     [Fact]
     public async Task GetProfileByUsernameAsync_ShouldReturnNull_WhenUserNotFound()
     {
-        // Arrange
         _mockUserManager.Setup(x => x.FindByNameAsync("unknown"))
             .ReturnsAsync((ApplicationUser?)null);
 
-        // Act
         var result = await _profileService.GetProfileByUsernameAsync("unknown");
 
-        // Assert
         result.Should().BeNull();
     }
 }

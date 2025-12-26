@@ -25,15 +25,12 @@ public static class ServiceRegistrationExtensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        // FluentValidation
         services.AddFluentValidationAutoValidation()
                 .AddFluentValidationClientsideAdapters();
         services.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>();
 
-        // AutoMapper
         services.AddAutoMapper(typeof(MappingProfile));
 
-        // Application Services
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IProblemService, ProblemService>();
         services.AddScoped<ITopicService, TopicService>();
@@ -43,7 +40,6 @@ public static class ServiceRegistrationExtensions
         services.AddScoped<IStudyPlanService, StudyPlanService>();
         services.AddScoped<IContestService, ContestService>();
 
-        // Current User
         services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
@@ -52,20 +48,15 @@ public static class ServiceRegistrationExtensions
 
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
-        // Database
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-        // Identity & JWT
         services.AddIdentityServices(configuration);
 
-        // Unit of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-        // Email
         services.AddScoped<IEmailSender, EmailSender>();
 
-        // Redis
         services.AddStackExchangeRedisCache(options =>
         {
             options.Configuration = configuration.GetConnectionString("Redis");

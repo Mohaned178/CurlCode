@@ -25,15 +25,12 @@ public class TopicServiceTests
     [Fact]
     public async Task CreateTopicAsync_ShouldThrowValidationException_WhenNameExists()
     {
-        // Arrange
         var dto = new CreateTopicDto { Name = "Arrays", Description = "Test" };
         _mockUnitOfWork.Setup(x => x.Topics.GetByNameAsync(dto.Name))
             .ReturnsAsync(new Topic { Id = 1, Name = "Arrays" });
 
-        // Act
         Func<Task> act = async () => await _topicService.CreateTopicAsync(dto);
 
-        // Assert
         await act.Should().ThrowAsync<CurlCode.Application.Common.Exceptions.ValidationException>()
             .WithMessage("Topic with this name already exists.");
     }
@@ -41,7 +38,6 @@ public class TopicServiceTests
     [Fact]
     public async Task CreateTopicAsync_ShouldSucceed_WhenNameIsUnique()
     {
-        // Arrange
         var dto = new CreateTopicDto { Name = "NewTopic", Description = "Test" };
         _mockUnitOfWork.Setup(x => x.Topics.GetByNameAsync(dto.Name))
             .ReturnsAsync((Topic?)null);
@@ -50,10 +46,8 @@ public class TopicServiceTests
         _mockMapper.Setup(x => x.Map<Topic>(dto)).Returns(topic);
         _mockMapper.Setup(x => x.Map<TopicDto>(topic)).Returns(new TopicDto { Id = 1, Name = "NewTopic" });
 
-        // Act
         var result = await _topicService.CreateTopicAsync(dto);
 
-        // Assert
         result.Should().NotBeNull();
         result.Name.Should().Be("NewTopic");
         _mockUnitOfWork.Verify(x => x.Topics.AddAsync(It.IsAny<Topic>()), Times.Once);
