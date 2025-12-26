@@ -83,5 +83,4 @@ The project follows the **Clean Architecture** pattern to maintain high decoupli
    ```
 4. **API UI**: Access the Swagger documentation at `https://localhost:5001/swagger`.
 
----
 
