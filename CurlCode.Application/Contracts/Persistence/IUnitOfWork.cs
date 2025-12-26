@@ -8,6 +8,7 @@ public interface IUnitOfWork : IDisposable
     ISolutionRepository Solutions { get; }
     IProfileRepository Profiles { get; }
     IStudyPlanRepository StudyPlans { get; }
+    IContestRepository Contests { get; }
     Task<int> SaveChangesAsync();
     Task BeginTransactionAsync();
     Task CommitTransactionAsync();

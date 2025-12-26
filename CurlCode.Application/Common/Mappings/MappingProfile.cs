@@ -1,4 +1,5 @@
 using AutoMapper;
+using CurlCode.Application.DTOs.Contests;
 using CurlCode.Application.DTOs.Problems;
 using CurlCode.Application.DTOs.Profiles;
 using CurlCode.Application.DTOs.Solutions;
@@ -6,6 +7,7 @@ using CurlCode.Application.DTOs.StudyPlans;
 using CurlCode.Application.DTOs.Submissions;
 using CurlCode.Application.DTOs.Topics;
 using CurlCode.Domain.Entities.Community;
+using CurlCode.Domain.Entities.Contests;
 using CurlCode.Domain.Entities.Identity;
 using CurlCode.Domain.Entities.Problems;
 using CurlCode.Domain.Entities.StudyPlans;
@@ -58,6 +60,11 @@ public class MappingProfile : Profile
         CreateMap<StudyPlanItemProgress, StudyPlanItemProgressDto>()
             .ForMember(dest => dest.ProblemId, opt => opt.MapFrom(src => src.StudyPlanItem.ProblemId))
             .ForMember(dest => dest.ProblemTitle, opt => opt.MapFrom(src => src.StudyPlanItem.Problem.Title));
+
+        // Contests
+        CreateMap<Contest, ContestDto>()
+            .ForMember(dest => dest.ParticipantCount, opt => opt.MapFrom(src => src.Participants.Count))
+            .ForMember(dest => dest.ProblemCount, opt => opt.MapFrom(src => src.ContestProblems.Count));
     }
 }
 

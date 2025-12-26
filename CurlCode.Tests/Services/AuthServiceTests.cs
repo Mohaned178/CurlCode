@@ -23,7 +23,7 @@ public class AuthServiceTests
     public AuthServiceTests()
     {
         var store = new Mock<IUserStore<ApplicationUser>>();
-        _mockUserManager = new Mock<UserManager<ApplicationUser>>(store.Object, null, null, null, null, null, null, null, null);
+        _mockUserManager = new Mock<UserManager<ApplicationUser>>(store.Object, null!, null!, null!, null!, null!, null!, null!, null!);
         
         
         _mockJwtTokenGenerator = new Mock<IJwtTokenGenerator>();

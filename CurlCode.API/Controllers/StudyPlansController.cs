@@ -39,7 +39,7 @@ public class StudyPlansController : ControllerBase
     }
 
     [HttpPost("create")]
-    public async Task<ActionResult<StudyPlanDto>> CreateCustomStudyPlan([FromBody] CreateStudyPlanDto dto)
+        public async Task<ActionResult<StudyPlanDto>> CreateCustomStudyPlan([FromBody] CreateStudyPlanDto dto)
     {
         var userId = _currentUserService.UserId;
         if (string.IsNullOrEmpty(userId))

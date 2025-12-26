@@ -1,4 +1,5 @@
 using CurlCode.Domain.Entities.Community;
+using CurlCode.Domain.Entities.Contests;
 using CurlCode.Domain.Entities.Identity;
 using CurlCode.Domain.Entities.Problems;
 using CurlCode.Domain.Entities.StudyPlans;
@@ -32,6 +33,11 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<StudyPlanItem> StudyPlanItems { get; set; }
     public DbSet<StudyPlanProgress> StudyPlanProgresses { get; set; }
     public DbSet<StudyPlanItemProgress> StudyPlanItemProgresses { get; set; }
+    
+    // Contest entities
+    public DbSet<Contest> Contests { get; set; }
+    public DbSet<ContestProblem> ContestProblems { get; set; }
+    public DbSet<ContestParticipant> ContestParticipants { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

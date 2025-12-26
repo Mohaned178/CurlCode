@@ -23,12 +23,14 @@ public class SubmissionServiceTests
         _mockMapper = new Mock<IMapper>();
         
         // Mock Repositories
-        _mockUnitOfWork.Setup(x => x.Problems).Returns(new Mock<IProblemRepository>().Object);
-        _mockUnitOfWork.Setup(x => x.Submissions).Returns(new Mock<ISubmissionRepository>().Object);
-        _mockUnitOfWork.Setup(x => x.Submissions.AddAsync(It.IsAny<Submission>()))
-            .ReturnsAsync((Submission s) => s);
-        _mockUnitOfWork.Setup(x => x.Submissions.UpdateAsync(It.IsAny<Submission>()))
+        var mockSubmissionRepo = new Mock<ISubmissionRepository>();
+        mockSubmissionRepo.Setup(x => x.AddAsync(It.IsAny<Submission>()))
+            .Returns<Submission>(s => Task.FromResult(s));
+        mockSubmissionRepo.Setup(x => x.UpdateAsync(It.IsAny<Submission>()))
             .Returns(Task.CompletedTask);
+            
+        _mockUnitOfWork.Setup(x => x.Problems).Returns(new Mock<IProblemRepository>().Object);
+        _mockUnitOfWork.Setup(x => x.Submissions).Returns(mockSubmissionRepo.Object);
 
         _submissionService = new SubmissionService(_mockUnitOfWork.Object, _mockMapper.Object);
     }

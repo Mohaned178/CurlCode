@@ -21,7 +21,7 @@ public class ProfileServiceTests
     {
         _mockUnitOfWork = new Mock<IUnitOfWork>();
         var store = new Mock<IUserStore<ApplicationUser>>();
-        _mockUserManager = new Mock<UserManager<ApplicationUser>>(store.Object, null, null, null, null, null, null, null, null);
+        _mockUserManager = new Mock<UserManager<ApplicationUser>>(store.Object, null!, null!, null!, null!, null!, null!, null!, null!);
         _mockMapper = new Mock<IMapper>();
         
         _profileService = new ProfileService(_mockUnitOfWork.Object, _mockUserManager.Object, _mockMapper.Object);

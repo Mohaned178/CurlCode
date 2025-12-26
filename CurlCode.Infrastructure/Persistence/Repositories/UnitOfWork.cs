@@ -15,6 +15,7 @@ public class UnitOfWork : IUnitOfWork
     private ISolutionRepository? _solutions;
     private IProfileRepository? _profiles;
     private IStudyPlanRepository? _studyPlans;
+    private IContestRepository? _contests;
 
     public UnitOfWork(ApplicationDbContext context)
     {
@@ -38,6 +39,9 @@ public class UnitOfWork : IUnitOfWork
 
     public IStudyPlanRepository StudyPlans =>
         _studyPlans ??= new StudyPlanRepository(_context);
+
+    public IContestRepository Contests =>
+        _contests ??= new ContestRepository(_context);
 
     public async Task<int> SaveChangesAsync()
     {

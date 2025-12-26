@@ -1,28 +1,14 @@
-using CurlCode.Application.Common.Mappings;
-using CurlCode.Application.Contracts.Infrastructure;
-using CurlCode.Application.Contracts.Persistence;
-using CurlCode.Application.Services.Auth;
-using CurlCode.Application.Services.Problems;
-using CurlCode.Application.Services.Profiles;
-using CurlCode.Application.Services.Solutions;
-using CurlCode.Application.Services.StudyPlans;
-using CurlCode.Application.Services.Submissions;
-using CurlCode.Application.Services.Topics;
-using CurlCode.Infrastructure.Identity;
-using CurlCode.Infrastructure.Persistence.Contexts;
-using CurlCode.Infrastructure.Persistence.Repositories;
-using CurlCode.Infrastructure.Services;
+using CurlCode.API.Extensions;
 using CurlCode.API.Middlewares;
-using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
+using CurlCode.Infrastructure.Persistence.Contexts;
+using CurlCode.Infrastructure.Identity; // For DataSeeder
 using Serilog;
-using StackExchange.Redis;
-using FluentValidation;
-using FluentValidation.AspNetCore;
-using CurlCode.Application.Validators;
+using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore; // For MigrateAsync
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Serilog Configuration
 builder.Host.UseSerilog((context, services, configuration) =>
 {
     configuration
@@ -40,21 +26,11 @@ builder.Services.AddControllers()
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
 
-// FluentValidation
-builder.Services.AddFluentValidationAutoValidation()
-                .AddFluentValidationClientsideAdapters();
-builder.Services.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>();
-
-// Database
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Identity & JWT
-builder.Services.AddIdentityServices(builder.Configuration);
-
-// Email
-builder.Services.AddScoped<IEmailSender, EmailSender>();
+// Extension Methods for Service Registration
+builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 // CORS
 builder.Services.AddCors(options =>
@@ -67,35 +43,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Stack Exchange Redis Cache
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = builder.Configuration.GetConnectionString("Redis");
-    options.InstanceName = "CurlCode:";
-});
-builder.Services.AddSingleton<IConnectionMultiplexer>(sp => 
-    ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")));
-builder.Services.AddScoped<ICacheService, RedisCacheService>();
-
-// Application Services
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
-builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
-builder.Services.AddHttpContextAccessor();
-
-// Application Services
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IProblemService, ProblemService>();
-builder.Services.AddScoped<ITopicService, TopicService>();
-builder.Services.AddScoped<ISubmissionService, SubmissionService>();
-builder.Services.AddScoped<ISolutionService, SolutionService>();
-builder.Services.AddScoped<IProfileService, ProfileService>();
-builder.Services.AddScoped<IStudyPlanService, StudyPlanService>();
-
-
-// AutoMapper
-builder.Services.AddAutoMapper(typeof(MappingProfile));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
@@ -106,9 +53,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<GlobalExceptionMiddleware>();
-
 app.UseHttpsRedirection();
-
 app.UseCors("AllowAll");
 
 app.UseAuthentication();
@@ -116,7 +61,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Ensure database is created
+// Ensure database is created/migrated
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
