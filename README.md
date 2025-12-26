@@ -3,129 +3,93 @@
 [![.NET](https://img.shields.io/badge/.NET-10.0-512bd4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/)
 [![SQL Server](https://img.shields.io/badge/SQL_Server-2022-CC2927?style=for-the-badge&logo=microsoft-sql-server)](https://www.microsoft.com/sql-server/)
 [![Redis](https://img.shields.io/badge/Redis-Distributed_Cache-DC382D?style=for-the-badge&logo=redis)](https://redis.io/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-CurlCode is a high-performance, real-world competitive programming platform designed for developers to master data structures and algorithms. Built with a focus on scalability, reliability, and clean architecture.
+CurlCode is a competitive programming platform designed for practicing data structures and algorithms, following Clean Architecture and modern .NET patterns.
 
 ---
 
 ## ✨ Features
 
-### 🏆 Competition & Training
-- **Contest Module**: Real-time programming contests with live standings, automated timers, and participation management.
-- **Problem Bank**: Extensive library of problems categorized by difficulty (Easy, Medium, Hard) and topics.
-- **Study Plans**: Structured learning tracks to guide developers through specific algorithm domains.
-
-### 👥 Community & Social
-- **Solution Posts**: Share your solutions with the community using Markdown.
-- **Interactions**: Like, comment, and discuss optimization strategies on others' solutions.
-- **User Profiles**: Comprehensive statistics, contribution heatmaps, and global ranking.
-
-### ⚙️ Technical Core
-- **Automated Judging**: (Simulated) Submissions are evaluated against multiple test cases.
-- **Distributed Caching**: Redis integration for lightning-fast profile and problem retrieval.
-- **Structured Logging**: Centralized logging via Serilog and Seq for production-grade observability.
+- **🔐 Robust Auth**: Complete user registration and authentication using ASP.NET Core Identity & JWT.
+- **🏆 Contest Module**: Participate in timed contests with automated standings and participation management.
+- **📚 Problem Repository**: Browse and solve algorithmic problems categorized by difficulty and topics.
+- **� Community Solutions**: Share solution posts, discuss optimizations, and engage with others via likes and comments.
+- **⚡ Performance First**: Integrated **Redis** for distributed caching of profile data and frequently accessed resources.
+- **🩺 Observability**: Structured logging with **Serilog** and optional **Seq** integration for real-time monitoring.
+- **⚙️ Automated Judging (Simulated)**: Submissions are currently evaluated through a simulated process (real judge engine integration planned).
 
 ---
 
 ## 🏗️ Architecture
 
-The project adheres to **Clean Architecture** principles, ensuring separation of concerns and maintainability.
+The project follows the **Clean Architecture** pattern to maintain high decoupling and testability:
 
-- **`CurlCode.Domain`**: Pure entities, enums, and domain-driven logic. No external dependencies.
-- **`CurlCode.Application`**: The orchestration layer containing business logic, DTOs, interfaces, and CQRS-style services.
-- **`CurlCode.Infrastructure`**: Implementation of persistence (EF Core), identity management, and external services (Redis, Email).
-- **`CurlCode.API`**: The entry point providing a RESTful interface, middleware, and OpenAPI documentation.
+- **`CurlCode.Domain`**: Core entities (Problems, Submissions, Contests) and domain enums.
+- **`CurlCode.Application`**: Business logic, DTOs, interfaces, and service implementations.
+- **`CurlCode.Infrastructure`**: EF Core persistence, Redis caching implementation, and Identity configuration.
+- **`CurlCode.API`**: RESTful endpoints, custom middleware, and Swagger documentation.
 
 ---
 
-## 🚀 Tech Stack
+## � API Endpoints
 
-- **Framework**: .NET 10.0
-- **Database**: SQL Server
+### 🔑 Authentication
+- `POST /api/auth/register` - Create a new account
+- `POST /api/auth/login` - Authenticate and get JWT
+
+### 👤 Profiles
+- `GET /api/profiles/me` - Get personal profile stats
+- `PUT /api/profiles/me` - Update profile information
+- `GET /api/profiles/{username}` - View public profile of another user
+
+### 🏆 Contests
+- `GET /api/contests/upcoming` - List upcoming contests
+- `GET /api/contests/running` - List current contests
+- `GET /api/contests/past` - View completed contests
+- `GET /api/contests/{id}/standings` - View contest leaderboard
+- `POST /api/contests/{id}/join` - Register for a contest (Auth required)
+
+### 🧩 Problems & Topics
+- `GET /api/problems` - List all problems (supports paging/filtering)
+- `GET /api/problems/{id}` - Detailed problem statement
+- `GET /api/topics` - View available problem tags
+- `POST /api/problems` - [Admin] Create a new problem
+
+### 📤 Submissions
+- `POST /api/submissions` - Submit code for a problem (Auth required)
+- `GET /api/submissions/me` - My submission history
+- `GET /api/submissions/{id}` - Specific submission result
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend**: .NET 10.0, ASP.NET Core API
+- **ORM**: Entity Framework Core 10.0 (SQL Server)
 - **Caching**: StackExchange.Redis
-- **Security**: ASP.NET Core Identity + JWT Bearer
-- **Validation**: FluentValidation
-- **Mapping**: AutoMapper
-- **Logging**: Serilog (Console, File, Seq)
-- **Documentation**: Swagger/OpenAPI
+- **Security**: ASP.NET Core Identity, JWT Bearer
+- **Mapping & Validation**: AutoMapper, FluentValidation
+- **Diagnostics**: Serilog, Seq, Swagger
 
 ---
 
-## 📁 Project Structure
+## 🏁 Getting Started
 
-```bash
-CurlCode/
-├── CurlCode.Domain/         # Core Domain Entities & Logic
-├── CurlCode.Application/    # Business Logic & Service Interfaces
-├── CurlCode.Infrastructure/ # Data Access & External Implementations
-├── CurlCode.API/            # Web API Controllers & Configuration
-└── CurlCode.Tests/          # Comprehensive Unit Test Suite
-```
-
----
-
-## 🛠️ Getting Started
-
-### 📋 Prerequisites
-- [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
-- SQL Server (LocalDB or Express)
-- [Redis Server](https://redis.io/download/) (Local or Docker)
-- [Seq](https://datalust.co/download) (Optional, for logging)
-
-### ⚙️ Configuration
-
-1. Update `appsettings.json` in `CurlCode.API`:
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "YOUR_SQL_CONNECTION_STRING",
-    "Redis": "localhost:6379"
-  },
-  "Serilog": {
-    "WriteTo": [
-      { "Name": "Seq", "Args": { "serverUrl": "http://localhost:5341" } }
-    ]
-  }
-}
-```
-
-### 🏃 Running the App
-
-1. **Restore & Build**:
+1. **Configure Database**: Update `DefaultConnection` in `CurlCode.API/appsettings.json`.
+2. **Configure Redis**: Ensure Redis is running (default `localhost:6379`).
+3. **Database Setup**: The app auto-migrates and seeds on startup. Run it using:
    ```bash
-   dotnet restore
-   dotnet build
+   dotnet run --project CurlCode.API
    ```
-
-2. **Initialize Database**:
-   ```bash
-   cd CurlCode.API
-   dotnet run --seed # Database auto-migrates and seeds on startup
-   ```
-
-3. **Explore the API**:
-   Navigate to `https://localhost:5001/swagger` to view the interactive documentation.
-
----
-
-## 🔐 Authentication
-
-1. Register via `POST /api/auth/register`
-2. Login via `POST /api/auth/login` to get your JWT.
-3. Add `Bearer <token>` to your request headers.
+4. **API UI**: Access the Swagger documentation at `https://localhost:5001/swagger`.
 
 ---
 
 ## 📝 Roadmap
 
-- [x] Phase 1: Core Stabilisation & Infrastructure
-- [x] Phase 2: Distributed Caching & Scaling
-- [/] Phase 3: Contest Module & Advanced Social Features
-- [ ] Phase 4: Real-time SignalR Feedback
-- [ ] Phase 5: Production Judge Service Integration (C++ Backend)
-
----
-
-## 📄 License
-This project is licensed under the MIT License.
+- [x] Phase 1: Stabilization & Build Fixes
+- [x] Phase 2: Redis Distributed Caching Implementation
+- [x] Phase 3: Contest Module (Standings, Registration)
+- [x] Phase 4: Structured Logging with Seq & API Refactoring
+- [ ] Phase 5: SignalR Real-time Submission Notifications
+- [ ] Phase 6: Code Execution Engine Integration (Judge Service)
